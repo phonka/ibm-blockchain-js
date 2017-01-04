@@ -648,8 +648,8 @@ function register(index, enrollId, enrollSecret, maxRetry, attempt, cb) {
         enrollId: enrollId,
         enrollSecret: enrollSecret
     };
-    logger.log(options);
-    logger.log(body);
+    logger.log('op: ', options);
+    logger.log('bo: ', body);
     rest.post(options, null, body, function(statusCode, data) {
         if (statusCode != null) {
             logger.error('[ibc-js] Register - failure x' + attempt + ' :', enrollId, statusCode);
